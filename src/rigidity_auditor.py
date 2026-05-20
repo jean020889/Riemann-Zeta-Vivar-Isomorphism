@@ -1,12 +1,20 @@
 import numpy as np
 import mpmath
 import hashlib
+from datetime import datetime
 
 def compute_delta3_table_sha(n_limit=500, L_values=[5, 10, 20, 50, 100]):
     """
     Calcula la estadística Dyson-Mehta Delta_3 para los ceros de Riemann.
     Presenta resultados en tabla y genera un hash SHA-256 como certificación digital.
+    Incluye fecha y versiones de librerías.
     """
+    # Información de auditoría
+    print("Fecha de ejecución:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    print("Versión NumPy:", np.__version__)
+    print("Versión mpmath:", mpmath.__version__)
+    print("-" * 50)
+
     mpmath.mp.dps = 40
     ceros = [float(mpmath.zetazero(k).imag) for k in range(1, n_limit + 1)]
     
