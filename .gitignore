@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# System files
+.DS_Store
+.vscode/
+.idea/
+
+# Results/Data (si no quieres subir archivos gigantes)
+/results/*.log
+/results/*.tmp
+
